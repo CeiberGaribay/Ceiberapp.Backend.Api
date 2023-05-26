@@ -26,6 +26,11 @@ builder.Services.AddSwaggerGen(setupAction =>
 });
 #endregion
 
+#region Storage
+var connectionString = "Data Source=mssql-107024-0.cloudclusters.net,10243 ;Initial Catalog=ceiberapp;User ID=ceiber;Password=TECINF2k10$; TrustServerCertificate=True";
+builder.Services.AddSqlServer<DbContextCeiberApp>(connectionString);
+#endregion
+
 var app = builder.Build();
 
 //app.MapPost("/phone", (Phone phone) => { DbPhones.Phones.Add(phone); });
